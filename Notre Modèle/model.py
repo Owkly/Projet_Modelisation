@@ -59,34 +59,6 @@ def L(t, L_0, L_T_max):
 # Paramètres constants
 L_0 = 6411
 
-# K(t)
-def K(t, K_0, I):
-    if(t == 0):
-        return K_0
-    return I(t-1) + (1 - delta_k) * K(t - 1, K_0, I)
-
-def I(t, Q):
-    return s * Q(t)
-
-
-def Q(t):
-    return (1 - Omega(t)) * (1 - Lambda(t)) * Y(t)
-
-def Omega(t):
-    return 0
-def Lambda(t):
-    return 0
-
-def Y(t):
-    return A(t) * K(t)**gamma * L(t)**(1-gamma)
-
-# Paramètres constants
-K_0 = 137
-delta_k = 0.1 #  δk ∈ [0.08, 0.2]. Default = 0.1.
-s = 0.22 # s ∈ [0.15, 0.25]. Default = 0.22.
-gamma = 0.3
-
-Q_0 = 55.34
 
 # sigma(t)
 def sigma(t, sigma_0, sigma_g_0, sigma_d1, sigma_g):
@@ -122,12 +94,6 @@ def BC(t, BC_0, BC_g):
 
 # Paramètres constants
 BC_0 = 1.26
-
-# Eland(t)
-def Eland(t, Eland_0):
-    if (t == 0):
-        return Eland_0
-    return Eland_0 * (0.8)**t
 
 ####################
 
@@ -280,8 +246,6 @@ def main():
     st.header("Graphe de BC(t)")
     plot_BC(time_range, BC_0, BC_g, f"pour BCg = {BC_g}")
     
-
-# équation 10 I(t-1)
 
 if __name__ == "__main__":
     main()
