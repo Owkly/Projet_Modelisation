@@ -1,7 +1,7 @@
 
 # Projet Modélisation
 
-On cherche à afficher des courbes et donner la possibilité à l'utilisateur de faire varier les paramètres grâce à des sliders sans avant à toucher au code 
+On cherche à afficher des courbes et donner la possibilité à l'utilisateur de faire varier les paramètres grâce à des sliders sans avoir à toucher au code 
 
 
 ## Amalia Seydou
